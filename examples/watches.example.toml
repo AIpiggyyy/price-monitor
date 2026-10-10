@@ -1,0 +1,34 @@
+# Copy to watches.toml and edit. One [[watch]] block per product page.
+# Secrets (Telegram, email) go in .env, never in this file.
+
+[settings]
+interval_minutes = 60            # how often to check every page
+db_path = "data/prices.sqlite"
+min_delay_per_domain_s = 5       # never hit the same site faster than this
+respect_robots_txt = true
+alert_after_failures = 3         # tell me if a page fails 3 checks in a row
+
+# Most shops publish price + stock as structured data, so a URL is often enough.
+[[watch]]
+name = "Noise-cancelling headphones"
+url = "https://www.example-shop.com/products/headphones"
+target_price = 299               # alert when the price is at or below this
+currency = "A$"
+
+[[watch]]
+name = "Espresso grinder"
+url = "https://www.example-store.com.au/grinder"
+drop_pct = 10                    # alert on any drop of 10% or more since the last check
+alert_restock = true             # alert when it comes back in stock
+
+# Sites without structured data: point at the price with a CSS selector.
+# Find it with: right-click the price > Inspect, or `python -m monitor test-url <url>`.
+[[watch]]
+name = "Standing desk"
+url = "https://www.example-furniture.com/desk"
+price_selector = "span.price"
+stock_selector = "#availability"
+out_of_stock_text = "out of stock"
+target_price = 600
+drop_pct = 5
+currency = "A$"

@@ -1,0 +1,8 @@
+.env
+watches.toml
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+demo_prices.png
