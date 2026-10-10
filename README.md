@@ -26,7 +26,7 @@ $ python -m monitor demo
 ## Quick start
 
 ```bash
-git clone https://github.com/AIpiggyyy/price-monitor.git
+git clone https://github.com/buildering-dev/price-monitor.git
 cd price-monitor
 pip install -r requirements.txt
 
