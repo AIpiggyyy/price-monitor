@@ -35,7 +35,7 @@ class Watch:
 class Settings:
     interval_minutes: int = 60
     db_path: str = "data/prices.sqlite"
-    user_agent: str = "price-monitor/1.0 (+https://github.com/AIpiggyyy/price-monitor)"
+    user_agent: str = "price-monitor/1.0 (+https://github.com/buildering-dev/price-monitor)"
     timeout_s: float = 20.0
     retries: int = 2
     min_delay_per_domain_s: float = 5.0      # be polite: never hit one site faster than this
